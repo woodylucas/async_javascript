@@ -35,12 +35,23 @@ function createPost(post) {
 
 // Async Await 
 
-async function init() {
-    await createPost({title: 'Post Three', body: 'This is post three'}); 
-    getPost(); 
+// async function init() {
+//     await createPost({title: 'Post Three', body: 'This is post three'}); 
+//     getPost(); 
+// }
+
+// init(); 
+
+// Async Await Fetch 
+
+async function fetchTODO() {
+    const resp = await fetch('https://jsonplaceholder.typicode.com/todos/'); 
+    const data = await resp.json(); 
+    console.log(data); 
 }
 
-init(); 
+fetchTODO();
+
 
 // // Promise.all
 
