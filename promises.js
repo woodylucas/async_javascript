@@ -27,4 +27,15 @@ function createPost(post) {
     }); 
 }
 
-createPost({title: 'Post Three', body: 'This is post three'}).then(getPost)
+createPost({title: 'Post Three', body: 'This is post three'})
+.then(getPost)
+.catch(error => console.log(error)); 
+
+
+// Promise.all
+
+const promise1 = Promise.resolve('Hello World');
+const promise2 = 10; 
+const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye')); 
+
+Promise.all([promise1, promise2, promise3]).then(((values) => console.log(values))); 
